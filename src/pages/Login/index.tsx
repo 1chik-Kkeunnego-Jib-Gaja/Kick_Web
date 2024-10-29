@@ -1,8 +1,11 @@
 import * as S from "./style";
+import { useNavigate } from "react-router-dom";
 import Kick from "../../assets/Kick.svg";
 import LoginLogo from "../../assets/LOGIN.svg";
 
 export const Login = () => {
+  const navigate = useNavigate();
+
   return (
     <S.LoginLayout>
       <S.Logo src={Kick} alt="Kick" />
@@ -23,7 +26,7 @@ export const Login = () => {
           </S.InputBox>
           <S.LoginButton>확인</S.LoginButton>
 
-          <S.Text>회원가입하러 가기</S.Text>
+          <S.Text onClick={() => navigate("/signup")}>회원가입하러 가기</S.Text>
         </S.Background>
       </S.LoginBox>
     </S.LoginLayout>
