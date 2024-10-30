@@ -57,11 +57,13 @@ export const MeatLover = styled.img`
 export const VegetableBox = styled.div`
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 `;
 
 export const MeatLoverBox = styled.div`
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 `;
 
 export const VegetableName = styled.p`
@@ -71,6 +73,10 @@ export const VegetableName = styled.p`
   color: #bcbcbc;
   text-align: center;
   margin-top: 0.7rem;
+
+  ${VegetableBox}:hover & {
+    color: #000000;
+  }
 `;
 
 export const MeatLoverName = styled.p`
@@ -81,6 +87,10 @@ export const MeatLoverName = styled.p`
   text-align: center;
   margin-top: 0.7rem;
   margin-left: 1rem;
+
+  ${MeatLoverBox}:hover & {
+    color: #000000;
+  }
 `;
 
 export const ButtonBox = styled.div`
@@ -89,21 +99,27 @@ export const ButtonBox = styled.div`
   margin-top: 3rem;
 `;
 
-export const NoButton = styled.button`
+interface NoButtonProps {
+  isClicked: boolean;
+}
+
+export const NoButton = styled.button<NoButtonProps>`
   width: 18rem;
   height: 2.5rem;
   font-family: "Pretendard-Regular";
   font-weight: 600;
   font-size: 15px;
-  background-color: #ffffff;
+  background-color: ${(props) => (props.isClicked ? "#FF6C46" : "#ffffff")};
   border-radius: 0.5rem;
-  color: #bcbcbc;
-  border: 3px solid #bcbcbc;
+  color: ${(props) => (props.isClicked ? "#ffffff" : "#bcbcbc")};
+  border: 3px solid ${(props) => (props.isClicked ? "#FF6C46" : "#bcbcbc")};
   outline: none;
   box-shadow: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
 
   &:focus {
     outline: none;
