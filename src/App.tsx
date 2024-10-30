@@ -6,14 +6,15 @@ import { Allergy } from "./pages/Allergy";
 import { Menu } from "./pages/menu";
 import { Target } from "./pages/target";
 import Main from "./pages/main";
-
+import { Landing } from "./pages/Landing";
 const App = () => {
   return (
     <>
       <GlobalStyle />
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/allergy" element={<Allergy />} />
           <Route path="/menu" element={<Menu />} />
