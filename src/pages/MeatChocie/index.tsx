@@ -1,9 +1,27 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSignUp } from "../../context/SignUpContext";
 import * as S from "./style";
 import meat from "../../assets/meatIcon.svg";
 
+type DetailedDietType = "CARNIVORE" | "PRIMAL";
+
 const MeatChoice = () => {
   const navigate = useNavigate();
+  const { updateSignUpData } = useSignUp();
+  const [selectedDiet, setSelectedDiet] = useState<DetailedDietType | "">("");
+
+  const handleDietSelect = (diet: DetailedDietType) => {
+    setSelectedDiet(diet);
+    updateSignUpData({ eatingStyle: diet }); // EatingStyleProp을 eatingStyle로 수정
+  };
+  const handleNext = () => {
+    if (!selectedDiet) {
+      alert("식단을 선택해주세요.");
+      return;
+    }
+    navigate("/target");
+  };
 
   return (
     <S.Container>
@@ -12,7 +30,15 @@ const MeatChoice = () => {
       <S.OptionList>
         <S.Option>
           <S.OptionName>
-            <input type="radio" name="diet" value="carnivore" />
+            <input
+              type="radio"
+              name="diet"
+              value="CARNIVORE"
+              checked={selectedDiet === "CARNIVORE"}
+              onChange={(e) =>
+                handleDietSelect(e.target.value as DetailedDietType)
+              }
+            />
             카니보어(Carnivore)
           </S.OptionName>
           <S.OptionDescription>
@@ -21,7 +47,15 @@ const MeatChoice = () => {
         </S.Option>
         <S.Option>
           <S.OptionName>
-            <input type="radio" name="diet" value="primal" />
+            <input
+              type="radio"
+              name="diet"
+              value="PRIMAL"
+              checked={selectedDiet === "PRIMAL"}
+              onChange={(e) =>
+                handleDietSelect(e.target.value as DetailedDietType)
+              }
+            />
             프라이멀(Primal)
           </S.OptionName>
           <S.OptionDescription>
@@ -29,7 +63,7 @@ const MeatChoice = () => {
           </S.OptionDescription>
         </S.Option>
       </S.OptionList>
-      <S.Button onClick={() => navigate("/main")}>넘어가기</S.Button>
+      <S.Button onClick={handleNext}>넘어가기</S.Button>
     </S.Container>
   );
 };

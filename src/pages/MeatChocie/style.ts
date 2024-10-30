@@ -1,3 +1,4 @@
+// MeatChoice의 스타일은 VegetableChoice와 동일하므로 같은 파일을 사용하거나 복사하여 사용할 수 있습니다.
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -5,115 +6,82 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  max-width: 600px;
-  margin: 0 auto;
-  font-family: "Pretendard-Regular";
-  background-color: #fff;
-  position: fixed;
+  background-color: #ffffff;
 `;
 
 export const Icon = styled.img`
   width: 5rem;
   height: 5rem;
-  margin-top: 5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 `;
 
-export const Title = styled.h2`
-  font-family: "Pretendard-Regular";
-  font-size: 22px;
+export const Title = styled.h1`
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 2rem;
-  text-align: center;
-  color: #000;
+  color: #333;
+  font-family: "Pretendard-Regular";
 `;
 
 export const OptionList = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem 0;
 `;
 
-export const Option = styled.label`
+export const Option = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 1rem;
-  color: #000;
-  cursor: pointer;
-
-  input[type="radio"] {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 1.2rem;
-    height: 1.2rem;
-    border: 2px solid #dfdfdf;
-    border-radius: 50%;
-    margin-right: 0.5rem;
-    position: relative;
-    cursor: pointer;
-
-    &:checked {
-      border-color: #ff6c46;
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 0.7rem;
-        height: 0.7rem;
-        background-color: #ff6c46;
-        border-radius: 50%;
-      }
-    }
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f8f8f8;
 `;
 
-export const OptionName = styled.div`
+export const OptionName = styled.label`
   display: flex;
   align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  font-size: 1rem;
+  color: #333;
   font-family: "Pretendard-Regular";
+
   input[type="radio"] {
-    margin-right: 0.5rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
   }
 `;
 
-export const OptionDescription = styled.div`
-  margin-left: 1.5rem;
-  font-family: "Pretendard-Regular";
+export const OptionDescription = styled.p`
+  margin-left: 2.2rem;
   font-size: 0.9rem;
-  color: #000;
-  font-weight: 600;
-  line-height: 1.4;
+  color: #666;
+  font-family: "Pretendard-Regular";
 `;
 
 export const Button = styled.button`
-  margin-top: 2rem;
-  padding: 1rem 2rem;
-  background-color: #000000;
+  width: 200px;
+  height: 48px;
+  background-color: #ff6c46;
   color: white;
   border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
+  border-radius: 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 15rem;
+  transition: opacity 0.2s;
   font-family: "Pretendard-Regular";
+
   &:hover {
-    background-color: #333333;
+    opacity: 0.9;
   }
 
   &:active {
-    transform: translateY(1px);
+    transform: scale(0.98);
   }
 `;

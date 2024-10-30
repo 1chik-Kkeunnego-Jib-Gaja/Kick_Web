@@ -1,10 +1,25 @@
-import * as S from "./style";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSignUp } from "../../context/SignUpContext";
+import * as S from "./style";
 import Kick from "../../assets/Kick.svg";
 import SignUpLogo from "../../assets/SINGUP.svg";
 
 export const SignUp = () => {
   const navigate = useNavigate();
+  const { updateSignUpData } = useSignUp();
+  const [nickname, setNickname] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = () => {
+    if (!nickname || !password) {
+      alert("아이디와 비밀번호를 모두 입력해주세요.");
+      return;
+    }
+
+    updateSignUpData({ nickname, password });
+    navigate("/Allergy");
+  };
 
   return (
     <S.SignUpLayout>
@@ -19,16 +34,23 @@ export const SignUp = () => {
           <S.InputBox>
             <S.IDBox>
               <S.IDTitle>ID</S.IDTitle>
-              <S.IDInput placeholder="아이디를 입력해주세요." />
+              <S.IDInput
+                value={nickname}
+                onChange={(e) => setNickname(e.target.value)}
+                placeholder="아이디를 입력해주세요."
+              />
             </S.IDBox>
             <S.PassBox>
               <S.PassTitle>PASSWORD</S.PassTitle>
-              <S.PassInput placeholder="비밀번호를 입력해주세요." />
+              <S.PassInput
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="비밀번호를 입력해주세요."
+              />
             </S.PassBox>
           </S.InputBox>
-          <S.SignUpButton onClick={() => navigate("/Allergy")}>
-            확인
-          </S.SignUpButton>
+          <S.SignUpButton onClick={handleSubmit}>확인</S.SignUpButton>
 
           <S.Text onClick={() => navigate("/login")}>로그인하러 가기</S.Text>
         </S.Background>

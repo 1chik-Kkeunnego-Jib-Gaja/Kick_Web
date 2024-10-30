@@ -58,3 +58,5 @@ export const IDInput = styled.input`
   font-family: "Pretendard-Regular";
   padding: 2%;
 `;
+
+export const SubmitButton = styled.button``;

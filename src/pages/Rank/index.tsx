@@ -1,31 +1,93 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
-import MeatIcon from "../../assets/meatIcon.svg";
+import Top3 from "../../assets/Top.svg";
+import search from "../../assets/search.svg";
+import heart from "../../assets/heart.svg";
+import food from "../../assets/Exfood.svg";
+import Add from "../../assets/Add.svg";
 
-const DietSelection: React.FC = () => {
+const DietSelection = () => {
+  const navigate = useNavigate();
+
   return (
-    <S.Container>
-      <S.Icon src={MeatIcon} alt="Meat Icon" />
-      <S.Title>좀 더 세세하게 선택해주세요!</S.Title>
-      <S.OptionList>
-        <S.Option>
-          <input type="radio" name="diet" value="carnivore" />
-          <span>카니보어(Carnivore)</span> 육류 중심 식단, 채소를 거의 섭취하지
-          않음.
-        </S.Option>
-        <S.Option>
-          <input type="radio" name="diet" value="primal" />
-          <span>프라이멀(Primal)</span> 고기와 생야채를 중심으로 하되 가공
-          식품은 지양함.
-        </S.Option>
-        <S.Option>
-          <input type="radio" name="diet" value="carnivore" />
-          <span>카니보어(Carnivore)</span> 육류 중심 식단, 채소를 거의 섭취하지
-          않음.
-        </S.Option>
-      </S.OptionList>
-      <S.Button>넘어가기</S.Button>
-    </S.Container>
+    <S.RankLayout>
+      <S.SearchBox>
+        <S.SearchIcon src={search} alt="search" />
+        <S.SearchInput placeholder="원하는 조합을 검색하세요" />
+      </S.SearchBox>
+      <S.Content>
+        <S.Top src={Top3} alt="top3" />
+
+        <S.RankItemContainer>
+          <S.RankNumber>1위</S.RankNumber>
+          <S.MenuBox>
+            <S.Food src={food} alt="food" />
+            <S.ContentBox2>
+              <S.TitleBox>
+                <S.Title>마크 정식</S.Title>
+                <S.heart src={heart} alt="heart" />
+              </S.TitleBox>
+              <S.TagBox>
+                <S.Tag>#편의점</S.Tag>
+              </S.TagBox>
+            </S.ContentBox2>
+          </S.MenuBox>
+        </S.RankItemContainer>
+
+        <S.RankItemContainer>
+          <S.RankNumber>2위</S.RankNumber>
+          <S.MenuBox>
+            <S.Food src={food} alt="food" />
+            <S.ContentBox2>
+              <S.TitleBox>
+                <S.Title>마크 정식</S.Title>
+                <S.heart src={heart} alt="heart" />
+              </S.TitleBox>
+              <S.TagBox>
+                <S.Tag>#편의점</S.Tag>
+              </S.TagBox>
+            </S.ContentBox2>
+          </S.MenuBox>
+        </S.RankItemContainer>
+
+        <S.RankItemContainer>
+          <S.RankNumber>3위</S.RankNumber>
+          <S.MenuBox>
+            <S.Food src={food} alt="food" />
+            <S.ContentBox2>
+              <S.TitleBox>
+                <S.Title>마크 정식</S.Title>
+                <S.heart src={heart} alt="heart" />
+              </S.TitleBox>
+              <S.TagBox>
+                <S.Tag>#편의점</S.Tag>
+              </S.TagBox>
+            </S.ContentBox2>
+          </S.MenuBox>
+        </S.RankItemContainer>
+
+        <S.RankItemContainer>
+          <S.RankNumber>4위</S.RankNumber>
+          <S.MenuBox>
+            <S.Food src={food} alt="food" />
+            <S.ContentBox2>
+              <S.TitleBox>
+                <S.Title>마크 정식</S.Title>
+                <S.heart src={heart} alt="heart" />
+              </S.TitleBox>
+              <S.TagBox>
+                <S.Tag>#편의점</S.Tag>
+              </S.TagBox>
+            </S.ContentBox2>
+          </S.MenuBox>
+        </S.RankItemContainer>
+      </S.Content>
+      <S.AddButton
+        onClick={() => navigate("/post")}
+        src={Add}
+        alt="add button"
+      />
+    </S.RankLayout>
   );
 };
 
