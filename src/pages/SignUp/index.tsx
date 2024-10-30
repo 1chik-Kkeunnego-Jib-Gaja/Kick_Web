@@ -26,9 +26,11 @@ export const SignUp = () => {
               <S.PassInput placeholder="비밀번호를 입력해주세요." />
             </S.PassBox>
           </S.InputBox>
-          <S.SignUpButton>확인</S.SignUpButton>
+          <S.SignUpButton onClick={() => navigate("/Allergy")}>
+            확인
+          </S.SignUpButton>
 
-          <S.Text onClick={() => navigate("/")}>로그인하러 가기</S.Text>
+          <S.Text onClick={() => navigate("/login")}>로그인하러 가기</S.Text>
         </S.Background>
       </S.SignUpBox>
     </S.SignUpLayout>

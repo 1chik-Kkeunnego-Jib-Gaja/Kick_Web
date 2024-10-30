@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import KickLogo from "../../assets/kickLogo.svg";
 import search from "../../assets/search.svg";
@@ -10,6 +11,8 @@ import food from "../../assets/Exfood.svg";
 import Recipe from "../../assets/edrecommend.svg";
 
 const Main: React.FC = () => {
+  const navigate = useNavigate();
+
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [currentBanner, setCurrentBanner] = useState(0);
   const banners = [ed, Recipe];

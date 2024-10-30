@@ -12,6 +12,8 @@ import { Recipe } from "./pages/recipe";
 import { After } from "./pages/After";
 import Post from "./pages/post";
 import Main from "./pages/main";
+import VegetableChoice from "./pages/vegetableChocie";
+import MeatChoice from "./pages/MeatChocie";
 
 const App = () => {
   return (
@@ -31,6 +33,8 @@ const App = () => {
           <Route path="/recipe" element={<Recipe />} />
           <Route path="/post" element={<Post />} />
           <Route path="/after" element={<After />} />
+          <Route path="/vegetable" element={<VegetableChoice />} />
+          <Route path="/meat" element={<MeatChoice />} />
         </Routes>
       </Router>
     </>
