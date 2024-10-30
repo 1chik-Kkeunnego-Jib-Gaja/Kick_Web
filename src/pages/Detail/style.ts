@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const RecommendLayout = styled.div`
+export const DetailLayout = styled.div`
   display: flex;
   width: 100%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 `;
 
 export const SearchBox = styled.div`
@@ -19,6 +19,7 @@ export const SearchBox = styled.div`
   border: none;
   border-radius: 11px;
   padding: 0 1rem;
+  margin-bottom: 1rem;
 `;
 
 export const SearchIcon = styled.img`
@@ -42,11 +43,6 @@ export const SearchInput = styled.input`
   }
 `;
 
-export const RecommendImg = styled.img`
-  width: 22.5rem;
-  margin-top: 1rem;
-`;
-
 export const MenuBox = styled.div`
   width: 100%;
   padding: 0 1rem;
@@ -59,10 +55,12 @@ export const ContentBox = styled.div`
   width: 100%;
   height: 100%;
   background-color: #ffffff;
+  padding-bottom: 15rem;
+  padding-top: 1rem;
 `;
 
 export const FoodImg = styled.img`
-  width: 100%;
+  width: 24rem;
 `;
 
 export const HeaderBox = styled.div`

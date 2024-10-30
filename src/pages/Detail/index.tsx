@@ -1,12 +1,11 @@
-import { useState } from "react";
 import * as S from "./style";
+import { useState } from "react";
 import search from "../../assets/search.svg";
-import RecommendImg from "../../assets/recommend.svg";
 import heart from "../../assets/heart.svg";
 import clickHeart from "../../assets/clickHeart.svg";
 import food from "../../assets/food.svg";
 
-export const Recommend = () => {
+export const Detail = () => {
   const [isHeartClicked, setIsHeartClicked] = useState(false);
   const [likeCount, setLikeCount] = useState(0);
 
@@ -14,17 +13,16 @@ export const Recommend = () => {
     setIsHeartClicked(!isHeartClicked);
     setLikeCount((prev) => (isHeartClicked ? prev - 1 : prev + 1));
   };
-
   return (
-    <S.RecommendLayout>
+    <S.DetailLayout>
       <S.SearchBox>
         <S.SearchIcon src={search} alt="search" />
         <S.SearchInput placeholder="원하는 조합을 검색하세요" />
       </S.SearchBox>
-      <S.RecommendImg src={RecommendImg} alt="recommend" />
+
+      <S.FoodImg src={food} alt="food" />
       <S.MenuBox>
         <S.ContentBox>
-          <S.FoodImg src={food} alt="food" />
           <S.HeaderBox>
             <S.TitleContainer>
               <S.Title>엽떡정식</S.Title>
@@ -49,6 +47,6 @@ export const Recommend = () => {
           </S.ReadyBox>
         </S.ContentBox>
       </S.MenuBox>
-    </S.RecommendLayout>
+    </S.DetailLayout>
   );
 };
