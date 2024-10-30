@@ -8,6 +8,8 @@ import { Target } from "./pages/target";
 import { Landing } from "./pages/Landing";
 import { Recommend } from "./pages/recommend";
 import { Detail } from "./pages/Detail";
+import { Recipe } from "./pages/recipe";
+import Post from "./pages/post";
 import Main from "./pages/main";
 
 const App = () => {
@@ -25,6 +27,8 @@ const App = () => {
           <Route path="/main" element={<Main />} />
           <Route path="/recommend" element={<Recommend />} />
           <Route path="/detail" element={<Detail />} />
+          <Route path="/recipe" element={<Recipe />} />
+          <Route path="/post" element={<Post />} />
         </Routes>
       </Router>
     </>

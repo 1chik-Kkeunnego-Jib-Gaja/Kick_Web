@@ -44,7 +44,7 @@ export const SearchInput = styled.input`
 `;
 
 export const MenuBox = styled.div`
-  width: 100%;
+  width: 24rem;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
@@ -52,11 +52,11 @@ export const MenuBox = styled.div`
 `;
 
 export const ContentBox = styled.div`
-  width: 100%;
   height: 100%;
   background-color: #ffffff;
   padding-bottom: 15rem;
   padding-top: 1rem;
+  margin-left: 1rem;
 `;
 
 export const FoodImg = styled.img`
