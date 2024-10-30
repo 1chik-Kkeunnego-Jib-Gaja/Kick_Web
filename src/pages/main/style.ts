@@ -5,7 +5,6 @@ export const MainLayout = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  position: fixed;
 `;
 
 export const ContentBox = styled.div`
@@ -64,7 +63,7 @@ export const Background = styled.div`
   width: 20rem;
   height: 40rem;
   background-color: #f8f7f7;
-  border-radius: 2rem;
+  border-radius: 2rem 2rem 0 0;
 `;
 
 export const WeekHotBox = styled.div`
