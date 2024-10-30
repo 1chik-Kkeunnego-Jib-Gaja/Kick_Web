@@ -5,8 +5,10 @@ import { SignUp } from "./pages/SignUp";
 import { Allergy } from "./pages/Allergy";
 import { Menu } from "./pages/menu";
 import { Target } from "./pages/target";
-import Main from "./pages/main";
 import { Landing } from "./pages/Landing";
+import { Recommend } from "./pages/recommend";
+import Main from "./pages/main";
+
 const App = () => {
   return (
     <>
@@ -20,6 +22,7 @@ const App = () => {
           <Route path="/menu" element={<Menu />} />
           <Route path="/target" element={<Target />} />
           <Route path="/main" element={<Main />} />
+          <Route path="/recommend" element={<Recommend />} />
         </Routes>
       </Router>
     </>

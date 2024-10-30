@@ -58,7 +58,7 @@ const Main: React.FC = () => {
                   <S.Tag>#편의점</S.Tag>
                 </S.TagBox>
               </S.ContentBox2>
-            </S.MenuBox>{" "}
+            </S.MenuBox>
             <S.MenuBox>
               <S.Food src={food} alt="food" />
               <S.ContentBox2>
