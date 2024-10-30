@@ -5,6 +5,7 @@ import { SignUp } from "./pages/SignUp";
 import { Allergy } from "./pages/Allergy";
 import { Menu } from "./pages/menu";
 import { Target } from "./pages/target";
+import Main from "./pages/main";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/allergy" element={<Allergy />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/target" element={<Target />} />
+          <Route path="/main" element={<Main />} />
         </Routes>
       </Router>
     </>
