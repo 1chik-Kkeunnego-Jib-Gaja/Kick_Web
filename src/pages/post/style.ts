@@ -67,7 +67,9 @@ export const Form = styled.div`
 `;
 
 export const Label = styled.label`
-  font-size: 0.9rem;
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  font-weight: 800;
   color: #333;
 `;
 
@@ -76,7 +78,7 @@ export const Input = styled.input`
   padding: 0.75rem;
   font-size: 1rem;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: #f5f5f5;
   outline: none;
   font-family: "Pretendard-Regular";
@@ -101,8 +103,8 @@ export const Tag = styled.div`
   align-items: center;
   background-color: #333;
   color: #fff;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
   font-size: 0.9rem;
 `;
 
@@ -134,7 +136,7 @@ export const TextArea = styled.textarea`
   height: 8rem;
   outline: none;
   font-family: "Pretendard-Regular";
-
+  font-weight: 600;
   &::placeholder {
     color: #bcbcbc;
   }

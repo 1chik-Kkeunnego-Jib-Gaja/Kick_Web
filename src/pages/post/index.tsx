@@ -35,7 +35,7 @@ const Post: React.FC = () => {
   return (
     <S.Container>
       <S.Header>
-        <S.BackButton>← 돌아가기</S.BackButton>
+        <S.BackButton>←돌아가기</S.BackButton>
       </S.Header>
       <S.ImageUploadBox>
         {image ? (
