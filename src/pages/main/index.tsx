@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as S from "./style";
 import KickLogo from "../../assets/kickLogo.svg";
 import search from "../../assets/search.svg";
@@ -7,11 +7,22 @@ import Hot from "../../assets/weekHot.svg";
 import Kick from "../../assets/KickText.svg";
 import heart from "../../assets/heart.svg";
 import food from "../../assets/Exfood.svg";
+import Recipe from "../../assets/edrecommend.svg";
 
 const Main: React.FC = () => {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [currentBanner, setCurrentBanner] = useState(0);
+  const banners = [ed, Recipe];
 
   const hashtags = ["편의점", "배달음식", "유행", "SNS체험음식"];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBanner((prev) => (prev === 0 ? 1 : 0));
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const toggleTag = (tag: string) => {
     if (selectedTag === tag) {
@@ -19,6 +30,10 @@ const Main: React.FC = () => {
     } else {
       setSelectedTag(tag);
     }
+  };
+
+  const handleBannerClick = () => {
+    setCurrentBanner((prev) => (prev === 0 ? 1 : 0));
   };
 
   return (
@@ -29,7 +44,30 @@ const Main: React.FC = () => {
           <S.SearchIcon src={search} alt="search" />
           <S.SearchInput placeholder="원하는 조합을 검색하세요" />
         </S.SearchBox>
-        <S.EdIcon src={ed} alt="ed" />
+        <S.BannerContainer onClick={handleBannerClick}>
+          <S.BannerWrapper>
+            {banners.map((banner, index) => (
+              <S.BannerImage
+                key={index}
+                src={banner}
+                alt={`banner-${index}`}
+                isActive={index === currentBanner}
+              />
+            ))}
+          </S.BannerWrapper>
+          <S.BannerDots>
+            {banners.map((_, index) => (
+              <S.Dot
+                key={index}
+                isActive={index === currentBanner}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentBanner(index);
+                }}
+              />
+            ))}
+          </S.BannerDots>
+        </S.BannerContainer>
         <S.Background>
           <S.WeekHotBox>
             <S.WeekHot src={Hot} alt="hot" />

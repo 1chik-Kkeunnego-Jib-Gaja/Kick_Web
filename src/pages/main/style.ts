@@ -40,8 +40,75 @@ export const SearchIcon = styled.img`
   cursor: pointer;
 `;
 
-export const EdIcon = styled.img`
+export const BannerContainer = styled.div`
+  position: relative;
   width: 20rem;
+  height: 8rem;
+  overflow: hidden;
+  border-radius: 1rem;
+`;
+
+export const BannerWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
+
+interface BannerImageProps {
+  isActive: boolean;
+}
+
+export const BannerImage = styled.img<BannerImageProps>`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+  opacity: ${(props) => (props.isActive ? 1 : 0)};
+  pointer-events: ${(props) => (props.isActive ? "auto" : "none")};
+`;
+
+export const BannerButton = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 2;
+
+  &:first-child {
+    left: 0;
+  }
+
+  &:last-of-type {
+    right: 0;
+  }
+`;
+
+export const BannerDots = styled.div`
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+`;
+
+interface DotProps {
+  isActive: boolean;
+}
+
+export const Dot = styled.div<DotProps>`
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: ${(props) =>
+    props.isActive ? "#ffffff" : "rgba(255, 255, 255, 0.5)"};
+  cursor: pointer;
 `;
 
 export const SearchInput = styled.input`
@@ -55,6 +122,10 @@ export const SearchInput = styled.input`
   &::placeholder {
     color: #bcbcbc;
   }
+`;
+
+export const EdIcon = styled.img`
+  width: 20rem;
 `;
 
 export const Background = styled.div`
