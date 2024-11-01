@@ -4,7 +4,7 @@ interface PropsType extends SVGProps<SVGSVGElement> {
   fill?: string;
 }
 
-const Store = ({ fill, ...props }: PropsType) => {
+const Store = ({ fill, ...props }: PropsType) => (
   <svg
     width="30"
     height="30"
@@ -27,7 +27,7 @@ const Store = ({ fill, ...props }: PropsType) => {
       stroke-linecap="round"
       stroke-linejoin="round"
     />
-  </svg>;
-};
+  </svg>
+);
 
 export default Store;
