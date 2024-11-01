@@ -59,4 +59,31 @@ export const IDInput = styled.input`
   padding: 2%;
 `;
 
-export const SubmitButton = styled.button``;
+export const SubmitButton = styled.button`
+  width: 18rem;
+  height: 3rem;
+  border-radius: 10px;
+  background-color: #ff6c46;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-family: "Pretendard-Regular";
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #ff8566;
+    transform: scale(1.02);
+  }
+
+  &:active {
+    background-color: #ff4d26;
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+`;

@@ -28,7 +28,7 @@ export const Content = styled.div`
 export const Quiz = styled.h2`
   font-size: 28px;
   font-weight: bold;
-  color: #FF6B6B;
+  color: #ff6b6b;
   margin-bottom: 10px;
 `;
 
@@ -52,8 +52,8 @@ export const Button = styled.button<{ isSelected?: boolean }>`
   height: 60px;
   border-radius: 30px;
   border: none;
-  background-color: ${props => props.isSelected ? '#FF6B6B' : '#f8f9fa'};
-  color: ${props => props.isSelected ? '#ffffff' : '#333'};
+  background-color: ${(props) => (props.isSelected ? "#FF6B6B" : "#f8f9fa")};
+  color: ${(props) => (props.isSelected ? "#ffffff" : "#333")};
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
@@ -62,7 +62,7 @@ export const Button = styled.button<{ isSelected?: boolean }>`
 
   &:hover {
     transform: translateY(-2px);
-    background-color: ${props => props.isSelected ? '#FF6B6B' : '#FF8787'};
+    background-color: ${(props) => (props.isSelected ? "#FF6B6B" : "#FF8787")};
     color: #ffffff;
   }
 
@@ -70,7 +70,6 @@ export const Button = styled.button<{ isSelected?: boolean }>`
     transform: translateY(1px);
   }
 
-  /* 반응형 디자인 */
   @media (max-width: 768px) {
     width: 120px;
     height: 50px;
