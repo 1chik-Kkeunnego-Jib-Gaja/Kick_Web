@@ -45,6 +45,7 @@ export const Content = styled.div`
   margin-top: 1rem;
   background-color: #f8f7f7;
   padding-bottom: 13rem;
+  height: 50rem;
 `;
 
 export const Top = styled.img`
@@ -53,35 +54,47 @@ export const Top = styled.img`
 `;
 
 export const Food = styled.img`
-  width: 8rem;
-  padding: 2px;
-  margin: 2rem 0.5rem;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
 `;
 
 export const ContentBox2 = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 0.5rem;
+  flex: 1;
 `;
 
 export const TitleBox = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 `;
 
 export const Title = styled.div`
-  display: flex;
   font-family: "Pretendard-Regular";
   font-weight: 700;
   font-size: 14px;
   color: #000000;
-  margin-left: 0.5rem;
 `;
 
 export const heart = styled.img`
-  display: flex;
-  width: 1.2rem;
-  margin-left: 2.5rem;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
 `;
 
 export const TagBox = styled.div`
@@ -121,16 +134,22 @@ export const MenuBox = styled.div`
   display: flex;
   align-items: center;
   background-color: #ffffff;
-  width: 20em;
+  width: 20rem;
   height: 6rem;
   border-radius: 0.8rem;
-  flex: 1;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
 `;
 
 export const AddButton = styled.img`
   position: fixed;
   bottom: 5rem;
-  right: 1.5rem;
+  right: 0.8rem;
   width: 3.5rem;
   height: 3.5rem;
   cursor: pointer;

@@ -1,75 +1,79 @@
 import styled from "styled-components";
 
 export const QuizLayout = styled.div`
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #ffffff;
 `;
 
-export const Title = styled.div`
-  font-size: 23px;
-  font-family: "Pretendard-Regular";
-  font-weight: 700;
-  color: #000;
-  margin-top: 10rem;
-  margin-bottom: 5rem;
+export const Title = styled.h1`
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #333;
 `;
 
 export const Content = styled.div`
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #000;
+  gap: 20px;
 `;
 
-export const Quiz = styled.div`
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #000;
-  font-family: "Pretendard-Regular";
+export const Quiz = styled.h2`
+  font-size: 28px;
+  font-weight: bold;
+  color: #FF6B6B;
+  margin-bottom: 10px;
 `;
 
-export const QuizContent = styled.div`
-  font-size: 18px;
-  font-family: "Pretendard-Regular";
-  font-weight: 700;
-  margin-bottom: 1rem;
+export const QuizContent = styled.p`
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
 `;
 
 export const ButtonBox = styled.div`
   display: flex;
-  flex-direction: column;
-  margin-top: 4rem;
-  gap: 1rem;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
 `;
 
-interface ButtonProps {
-  isSelected: boolean;
-}
-
-export const Button = styled.button<ButtonProps>`
-  width: 15rem;
-  height: 3rem;
-  border: 1px solid #ff6c46;
-  border-radius: 8px;
-  font-family: "Pretendard-Regular";
-  font-size: 14px;
-  font-weight: 500;
+export const Button = styled.button<{ isSelected?: boolean }>`
+  width: 150px;
+  height: 60px;
+  border-radius: 30px;
+  border: none;
+  background-color: ${props => props.isSelected ? '#FF6B6B' : '#f8f9fa'};
+  color: ${props => props.isSelected ? '#ffffff' : '#333'};
+  font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
-
-  background-color: ${(props) => (props.isSelected ? "#FF6C46" : "#FFFFFF")};
-  color: ${(props) => (props.isSelected ? "#FFFFFF" : "#FF6C46")};
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    opacity: 0.9;
+    transform: translateY(-2px);
+    background-color: ${props => props.isSelected ? '#FF6B6B' : '#FF8787'};
+    color: #ffffff;
   }
 
   &:active {
-    transform: scale(0.98);
+    transform: translateY(1px);
+  }
+
+  /* 반응형 디자인 */
+  @media (max-width: 768px) {
+    width: 120px;
+    height: 50px;
+    font-size: 16px;
   }
 `;

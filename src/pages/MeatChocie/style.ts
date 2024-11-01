@@ -7,16 +7,18 @@ export const Container = styled.div`
   align-items: center;
   padding: 2rem;
   background-color: #ffffff;
+  height: 50rem;
 `;
 
 export const Icon = styled.img`
   width: 5rem;
   height: 5rem;
+  margin-top: 4rem;
   margin-bottom: 2rem;
 `;
 
 export const Title = styled.h1`
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 2rem;
   color: #333;

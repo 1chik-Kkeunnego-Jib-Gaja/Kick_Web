@@ -4,7 +4,7 @@ import search from "../../assets/search.svg";
 import RecommendImg from "../../assets/recommend.svg";
 import heart from "../../assets/heart.svg";
 import clickHeart from "../../assets/clickHeart.svg";
-import food from "../../assets/food.svg";
+import food from "../../assets/ice.jpg";
 
 export const Recommend = () => {
   const [isHeartClicked, setIsHeartClicked] = useState(false);
@@ -27,10 +27,10 @@ export const Recommend = () => {
           <S.FoodImg src={food} alt="food" />
           <S.HeaderBox>
             <S.TitleContainer>
-              <S.Title>엽떡정식</S.Title>
-              <S.SubTitle>@@님의 조합</S.SubTitle>
+              <S.Title>아이스 휘핑 추가</S.Title>
+              <S.SubTitle>3님의 조합</S.SubTitle>
               <S.TagBox>
-                <S.Tag>#편의점</S.Tag>
+                <S.Tag>#병맛</S.Tag>
               </S.TagBox>
             </S.TitleContainer>
             <S.HeartContainer>
@@ -42,10 +42,15 @@ export const Recommend = () => {
               <S.LikeCount>{likeCount}</S.LikeCount>
             </S.HeartContainer>
           </S.HeaderBox>
-          <S.RecipeBox></S.RecipeBox>
+          <S.RecipeBox>
+            <S.RecipeTitle>조합 방법</S.RecipeTitle>
+            <S.RecipeContent>
+              엄청 시원한 아이스티에 휘핑 추가하기
+            </S.RecipeContent>
+          </S.RecipeBox>
           <S.ReadyTitle>사용된 음식</S.ReadyTitle>
           <S.ReadyBox>
-            <S.Ready>fasdfa</S.Ready>
+            <S.Ready>아이스티, 휘핑크림, 얼음 많이</S.Ready>
           </S.ReadyBox>
         </S.ContentBox>
       </S.MenuBox>

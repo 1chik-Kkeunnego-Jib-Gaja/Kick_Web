@@ -69,7 +69,38 @@ export const ItemName = styled.span`
   font-size: 12px;
   color: #333;
 `;
+
 export const NextButton = styled.button`
-  width: 16rem;
-  height: 2.5rem;
+  width: 20rem;
+  height: 3.5rem;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff8787;
+  color: white;
+  font-family: "Pretendard-Regular";
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(255, 135, 135, 0.2);
+
+  &:hover {
+    background-color: #ff6b6b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(255, 135, 135, 0.3);
+  }
+
+  &:active {
+    background-color: #ff5252;
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(255, 135, 135, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
+    max-width: 20rem;
+    height: 3rem;
+    font-size: 1rem;
+  }
 `;
