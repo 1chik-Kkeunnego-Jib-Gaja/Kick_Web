@@ -6,7 +6,7 @@ import HealthLogo from "../../assets/health.svg";
 
 export const Target = () => {
   const navigate = useNavigate();
-  const { updateSignUpData, submitSignUp } = useSignUp();
+  const { updateSignUpData, submitSignUp, signUpData } = useSignUp();
   const [goal, setGoal] = useState("");
 
   const handleSubmit = async () => {
@@ -15,13 +15,21 @@ export const Target = () => {
       return;
     }
 
-    updateSignUpData({ goal });
     try {
+      await updateSignUpData({ goal });
+      console.log("전송될 데이터:", { ...signUpData, goal });
       await submitSignUp();
-      navigate("/main");
+      navigate("/login");
     } catch (error) {
+      console.error("에러 발생:", error);
       alert("회원가입 중 오류가 발생했습니다. 다시 시도해주세요.");
     }
+  };
+
+  const handleGoalChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newGoal = e.target.value;
+    setGoal(newGoal);
+    updateSignUpData({ goal: newGoal });
   };
 
   return (
@@ -36,7 +44,7 @@ export const Target = () => {
       <S.IDBox>
         <S.IDInput
           value={goal}
-          onChange={(e) => setGoal(e.target.value)}
+          onChange={handleGoalChange}
           placeholder="건강 목표를 입력해주세요."
         />
       </S.IDBox>
