@@ -164,7 +164,22 @@ export const ReadyTitle = styled.p`
 export const Ready = styled.p`
   font-family: "Pretendard-Regular";
   font-size: 14px;
-
   font-weight: 600;
   color: #000000;
+`;
+
+export const RecipeContent = styled.p`
+  padding: 0.5rem 1rem 0 1rem;
+  color: #000000;
+  font-family: "Pretendard-Regular";
+`;
+
+export const RecipeTitle = styled.p`
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+  margin-top: 2rem;
 `;
