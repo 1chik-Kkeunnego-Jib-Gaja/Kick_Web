@@ -7,48 +7,51 @@ import Store from "../../assets/store";
 
 const Footer = () => {
   const navigate = useNavigate();
+  const paths = ["/main", "/rank", "/post", "/profile"];
   const path = window.location.pathname;
 
   const getColor = (inputPath: string) => {
-    return path === inputPath ? "#000000" : undefined;
+    return path === inputPath ? "#FF6C46" : "";
   };
+
+  if (!paths.includes(path)) return null;
 
   const navItems = [
     {
       path: "/main",
-      icon: <Home fill={getColor("/main")} />,
+      img: <Home fill={getColor("/main")} />,
       text: "홈",
     },
     {
       path: "/rank",
-      icon: <Lanking fill={getColor("/rank")} />,
+      img: <Lanking fill={getColor("/rank")} />,
       text: "랭킹",
     },
     {
       path: "/post",
-      icon: <Store fill={getColor("/post")} />,
+      img: <Store fill={getColor("/post")} />,
       text: "게시물",
     },
     {
       path: "/profile",
-      icon: <Profile fill={getColor("/profile")} />,
+      img: <Profile fill={getColor("/profile")} />,
       text: "프로필",
     },
   ];
 
   return (
-    <S.FooterContainer>
-      {navItems.map((item) => (
-        <S.NavItem
-          key={item.path}
-          onClick={() => navigate(item.path)}
-          isActive={path === item.path}
+    <S.BottomNavigation>
+      {navItems.map((nav) => (
+        <S.NavBlock
+          key={nav.path}
+          color={getColor(nav.path)}
+          onClick={() => navigate(nav.path)}
         >
-          {item.icon}
-          <S.NavText isActive={path === item.path}>{item.text}</S.NavText>
-        </S.NavItem>
+          {nav.img}
+          <p>{nav.text}</p>
+        </S.NavBlock>
       ))}
-    </S.FooterContainer>
+    </S.BottomNavigation>
   );
 };
 
